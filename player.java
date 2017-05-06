@@ -1,17 +1,41 @@
-public class player {
+package Draft;
 
-	String name;
-	int stats;
-	public void setName(String n){
-		name = n;
+import java.util.*;
+
+public class Player implements Comparable<Player> {
+	
+	private String name;
+	private int round;
+	
+	public Player(String name, int round) {
+		
+		this.setName(name);
+		this.setRound(round);
 	}
-public String getName(){
+	
+	public String setName(String name) {
+		
+		this.name = name;
+		
 		return name;
 	}
-public void setPoints(int s){
-	stats = s;
-}
-public int getPoints(){
-	return stats;
-}
+	
+	public String getName() {
+		
+		return this.name;
+	}
+	
+	public int setRound(int round) {
+		this.round = round;
+		
+		return round;
+	}
+	
+	public int getRound() {
+		return this.round;
+	}
+	
+	public int compareTo(Player otherPlayer) {
+		return Integer.compare(this.getRound(), otherPlayer.getRound());
+	}
 }
